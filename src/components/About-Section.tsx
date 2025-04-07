@@ -1,7 +1,5 @@
-import Image from "next/image"
-
 export default function AboutSection() {
-  const designTools = ["Adobe Xd", "Illustrator", "Photoshop", "Figma", "Sketch"]
+  const designTools = ["Adobe Xd", "Illustrator", "Photoshop", "Figma", "Sketch"];
   const technologies = [
     "Html",
     "Css",
@@ -14,14 +12,14 @@ export default function AboutSection() {
     "Graphic Design",
     "Art Design",
     "Ui/Ux Design",
-  ]
+  ];
 
   return (
     <section id="about-us" className="about section">
       <div className="container">
         <div className="about__content">
           <div className="about__image">
-            <Image src="/placeholder.svg?height=600&width=500" alt="About Me" width={500} height={600} />
+            <img src="/placeholder.svg" alt="About Me" width={500} height={600} />
           </div>
 
           <div className="about__info">
@@ -84,6 +82,5 @@ export default function AboutSection() {
       </div>
       <div className="about__background-text">ABOUT</div>
     </section>
-  )
+  );
 }
-

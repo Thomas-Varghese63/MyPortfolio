@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 
 export default function HeroSection() {
@@ -30,7 +29,7 @@ export default function HeroSection() {
 
             {/* Profile image */}
             <div className="hero__image">
-              <Image src="/placeholder.svg?height=500&width=500" alt="Zemo Plakson" width={500} height={500} priority />
+              <img src="/placeholder.svg" alt="Zemo Plakson" width={500} height={500} />
             </div>
           </div>
         </div>
