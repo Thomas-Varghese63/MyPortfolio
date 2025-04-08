@@ -3,38 +3,38 @@ import { Laptop, LayoutGrid, Layers, Smartphone, Bug, Settings } from "lucide-re
 export default function ServicesSection() {
   const services = [
     {
-      icon: <Laptop className="w-8 h-8" />,
+      icon: <Laptop className="service-card__icon-svg" />,
       title: "Unique design",
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.",
     },
     {
-      icon: <LayoutGrid className="w-8 h-8" />,
+      icon: <LayoutGrid className="service-card__icon-svg" />,
       title: "Different Layout",
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.",
       active: true,
     },
     {
-      icon: <Layers className="w-8 h-8" />,
+      icon: <Layers className="service-card__icon-svg" />,
       title: "Make it Simple",
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.",
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
+      icon: <Smartphone className="service-card__icon-svg" />,
       title: "Responsiveness",
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.",
     },
     {
-      icon: <Bug className="w-8 h-8" />,
+      icon: <Bug className="service-card__icon-svg" />,
       title: "Testing for Perfection",
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.",
     },
     {
-      icon: <Settings className="w-8 h-8" />,
+      icon: <Settings className="service-card__icon-svg" />,
       title: "Advanced Options",
       description:
         "I design and develop services for customers of all sizes, specializing in creating stylish, modern websites.",
@@ -63,4 +63,3 @@ export default function ServicesSection() {
     </section>
   )
 }
-

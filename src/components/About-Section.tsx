@@ -3,14 +3,12 @@ export default function AboutSection() {
   const technologies = [
     "Html",
     "Css",
-    "Scss",
-    "Less",
-    "jQuery",
-    "php",
     "React",
-    "Javascript",
-    "Graphic Design",
-    "Art Design",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "MySql",
+    "Python",
     "Ui/Ux Design",
   ];
 
@@ -28,10 +26,15 @@ export default function AboutSection() {
                 <div className="section-bar"></div>
                 <h3 className="about__section-title">About Me</h3>
               </div>
-              <p className="about__intro">Hello, my name is Zemo and I am UX/UI designer and front-end developer</p>
+              <p className="about__intro">Hiii!, I am Thomas Varghese </p>
               <p className="about__description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              I am a passionate and dedicated B.Tech Computer Science Engineerung student with a strong
+              interest in web development, software development, and data analysis. I thrive on
+              solving complex problems and continuously learning new technologies to enhance
+              my skills.
+              With a hardworking mindset and adaptability, I can quickly adjust to new challenges
+              and environments. I also possess strong communication skills, allowing me to
+              collaborate effectively with teams and convey technical concepts clearly.
               </p>
             </div>
 

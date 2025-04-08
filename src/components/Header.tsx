@@ -10,13 +10,13 @@ export default function Header() {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const navItems = ["HOME", "ABOUT US", "SERVICES", "PORTFOLIO", "BLOG", "CONTACT"]
+  const navItems = ["HOME", "ABOUT", "EDUCATION","SERVICES", "PROJECTS","CONTACT"]
 
   return (
     <header className="header">
       <div className="header__container container">
         <a href="/" className="header__logo">
-          Zemo
+        <div className="header_name"><span className="styled-name">&lt;<span className="big">&nbsp;T</span> &gt;</span>  </div>      
         </a>
 
         {/* Mobile menu button */}

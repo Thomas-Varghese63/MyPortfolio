@@ -8,7 +8,7 @@ export default function HeroSection() {
           <div className="hero__text">
             <h2 className="hero__greeting">Hi There, I'm</h2>
             <h1 className="hero__name">
-              Zemo Plakson
+              Thomas Varghese
               <div className="hero__name-underline"></div>
             </h1>
             <h3 className="hero__title">Freelance</h3>
@@ -16,8 +16,8 @@ export default function HeroSection() {
               The dynamics of how users interact with interactive elements within a user interface flow chart based on
               container proportion.
             </p>
-            <a href="#contact" className="btn btn--primary">
-              Contact Me
+            <a href="#contact" className="contact-button">
+              <div className="contact-text">Contact Me</div> 
             </a>
           </div>
 

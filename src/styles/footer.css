@@ -1,0 +1,10 @@
+.footer {
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(10, 37, 64, 0.2);
+  }
+  
+  .footer__content {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 0.875rem;
+  }
