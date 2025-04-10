@@ -47,9 +47,23 @@
     font-weight: 700;
 }
 
+.hero__name::first-letter {
+    color: #f03e3e;
+    font-size: 5.5rem; /* Adjust this value for responsiveness */
+}
+
+@media (max-width: 480px) {
+    .hero__name::first-letter {
+        font-size: 3rem; /* Responsive size for mobile */
+    }
+    .hero__name {
+        letter-spacing: -0.05em; /* Reduce gap between letters */
+    }
+}
+
 @media (min-width: 768px) {
     .hero__name {
-        font-size: 4.5rem;
+        font-size: 4rem;
     }
 }
 
@@ -97,9 +111,7 @@
     overflow: hidden;
     border: 3px solid #f03e3e;
     z-index: 2;
- }
-
- 
+}
 
 .hero__image img {
     width: 100%;
@@ -203,9 +215,8 @@
         font-size: 2.5rem;
     }
 
-    .hero__name-underline{
+    .hero__name-underline {
         width: 0rem;
-         
     }
 
     .hero__title {

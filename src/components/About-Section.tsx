@@ -1,33 +1,33 @@
 export default function AboutSection() {
-  const designTools = ["Adobe Xd", "Illustrator", "Photoshop", "Figma", "Sketch"];
   const technologies = [
-    "Html",
-    "Css",
-    "React",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "MySql",
-    "Python",
-    "Ui/Ux Design",
-  ];
+    {name: "Python", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"},
+    {name:"C", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"},
+    { name: "HTML", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" },
+    { name: "CSS", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" },
+    { name: "JavaScript", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
+    { name: "React", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" },
+    { name: "TypeScript", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" },
+    { name: "Node.js", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" },
+    { name: "MongoDB", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" },
+    { name: "MySQL", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
+    { name: "Git", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
+    { name: "Figma", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg" },
+     ]
 
   return (
     <section id="about-us" className="about section">
       <div className="container">
         <div className="about__content">
-           
           <div className="about__background-text">ABOUT</div>
-
-          <div className="about__info">
           <h3 className="section-heading-title">ABOUT ME</h3>
+          <div className="about__info">
             <div className="about__section">
               <div className="about__section-heading">
                  
               </div>
               <p className="about__intro">Hiii, I am Thomas Varghese ! </p>
               <p className="about__description">
-              I am a passionate and dedicated B.Tech Computer Science Engineerung student with a strong
+              I am a passionate and dedicated B.Tech Computer Science Engineering student with a strong
               interest in web development, software development, and data analysis. I thrive on
               solving complex problems and continuously learning new technologies to enhance
               my skills.
@@ -40,49 +40,26 @@ export default function AboutSection() {
             <div className="about__section">
               <div className="about__section-heading">
                 <div className="section-bar"></div>
-                <h4 className="about__section-title">Design Tools</h4>
-              </div>
-              <div className="about__skills">
-                {designTools.map((tool) => (
-                  <span key={tool} className="about__skill">
-                    {tool}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="about__section">
-              <div className="about__section-heading">
-                <div className="section-bar"></div>
                 <h4 className="about__section-title">Technologies and Skills</h4>
               </div>
-              <div className="about__skills">
-                {technologies.map((tech) => (
-                  <span key={tech} className="about__skill">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
 
-            <div className="about__section">
-              <div className="about__section-heading">
-                <div className="section-bar"></div>
-                <h4 className="about__section-title">Work Process</h4>
-              </div>
-              <div className="about__process">
-                {["Research", "Design", "Coding", "Launch"].map((step, index) => (
-                  <div key={step} className="about__process-item">
-                    <div className="about__process-circle">{`0${index + 1}`}</div>
-                    <span>{step}</span>
-                  </div>
-                ))}
+              <div className="tech-scroll-container">
+                <div className="tech-scroll">
+                  {/* Duplicate the technologies array to create a seamless loop */}
+                  {[...technologies, ...technologies].map((tech, index) => (
+                    <div key={index} className="tech-item">
+                      <div className="tech-logo">
+                        <img src={tech.logo} alt={tech.name} />
+                      </div>
+                      <span className="tech-name">{tech.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
     </section>
   );
 }
