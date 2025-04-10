@@ -1,5 +1,10 @@
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Facebook, Twitter, Instagram, Linkedin,Download} from "lucide-react"
+import profileImage from "../assets/passport_size_photo.png";
 
+
+
+
+ 
 export default function HeroSection() {
   return (
     <section id="home" className="hero section">
@@ -11,14 +16,21 @@ export default function HeroSection() {
               Thomas Varghese
               <div className="hero__name-underline"></div>
             </h1>
-            <h3 className="hero__title">Freelance</h3>
+            <h3 className="hero__title">Student</h3>
             <p className="hero__description">
-              The dynamics of how users interact with interactive elements within a user interface flow chart based on
-              container proportion.
+            Passionate developer turning ideas into practical, responsive solutions.
             </p>
-            <a href="#contact" className="contact-button">
-              <div className="contact-text">Contact Me</div> 
-            </a>
+            <a
+            href="/THOMAS VARGHESE RESUME.pdf"
+            download="THOMAS VARGHESE RESUME.pdf"
+            className="resume-button"
+            aria-label="Download Resume"
+          >
+            <div className="resume-text">
+              Resume <Download size={20} className="contact-icon" />
+            </div>
+          </a>
+
           </div>
 
           <div className="hero__image-container">
@@ -29,8 +41,7 @@ export default function HeroSection() {
 
             {/* Profile image */}
             <div className="hero__image">
-              <img src="/placeholder.svg" alt="Zemo Plakson" width={500} height={500} />
-            </div>
+            <img src={profileImage} alt="Thomas" width={500} height={500} />            </div>
           </div>
         </div>
       </div>

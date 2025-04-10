@@ -16,17 +16,16 @@ export default function AboutSection() {
     <section id="about-us" className="about section">
       <div className="container">
         <div className="about__content">
-          <div className="about__image">
-            <img src="/placeholder.svg" alt="About Me" width={500} height={600} />
-          </div>
+           
+          <div className="about__background-text">ABOUT</div>
 
           <div className="about__info">
+          <h3 className="section-heading-title">ABOUT ME</h3>
             <div className="about__section">
               <div className="about__section-heading">
-                <div className="section-bar"></div>
-                <h3 className="about__section-title">About Me</h3>
+                 
               </div>
-              <p className="about__intro">Hiii!, I am Thomas Varghese </p>
+              <p className="about__intro">Hiii, I am Thomas Varghese ! </p>
               <p className="about__description">
               I am a passionate and dedicated B.Tech Computer Science Engineerung student with a strong
               interest in web development, software development, and data analysis. I thrive on
@@ -83,7 +82,7 @@ export default function AboutSection() {
           </div>
         </div>
       </div>
-      <div className="about__background-text">ABOUT</div>
+      
     </section>
   );
 }

@@ -13,13 +13,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem; /* Reduced padding for height adjustment */
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .header__logo {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
+    position: relative;
+    right:10% ; /* Adjusted left position for centering */
 }
 
 .styled-name {
@@ -32,6 +37,8 @@
 
 .header__nav {
     display: none;
+    position:relative;
+    left: 10%;
 }
 
 .header__nav-list {
@@ -46,11 +53,13 @@
     font-size: 0.875rem;
     letter-spacing: 0.05em;
     transition: color 0.2s;
-}
+  }
 
 .header__nav-link:hover {
-    color: white;
+    color:  #f03e3e;
 }
+ 
+
 
 .header__menu-button {
     background: none;
@@ -87,5 +96,12 @@
 
     .header__menu-button {
         display: none;
+    }
+}
+
+/* Add responsive padding for smaller screens */
+@media (max-width: 768px) {
+    .header__container {
+        padding: 1rem 2rem;
     }
 }
