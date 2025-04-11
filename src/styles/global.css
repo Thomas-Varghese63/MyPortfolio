@@ -10,11 +10,12 @@ body {
   color: #ffffff;
   font-family: "Inter", sans-serif;
   line-height: 1.5;
+  
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1350px;
   margin: 0 auto;
   padding: 0 1rem;
 }

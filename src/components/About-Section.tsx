@@ -11,8 +11,8 @@ export default function AboutSection() {
     { name: "MongoDB", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" },
     { name: "MySQL", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
     { name: "Git", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
-    { name: "Figma", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg" },
-     ]
+    {name:"supabase", logo:"https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg"},
+      ]
 
   return (
     <section id="about-us" className="about section">
@@ -39,8 +39,7 @@ export default function AboutSection() {
 
             <div className="about__section">
               <div className="about__section-heading">
-                <div className="section-bar"></div>
-                <h4 className="about__section-title">Technologies and Skills</h4>
+                 <h4 className="about__section-title">Technologies and Skills</h4>
               </div>
 
               <div className="tech-scroll-container">

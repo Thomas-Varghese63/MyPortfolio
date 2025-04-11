@@ -45,19 +45,29 @@
 .hero__name {
     font-size: 3rem;
     font-weight: 700;
+    letter-spacing: normal;
+    display: inline-block; /* Enables fine control */
+    position: relative;
 }
 
 .hero__name::first-letter {
     color: #f03e3e;
-    font-size: 5.5rem; /* Adjust this value for responsiveness */
+    font-size: 5.9rem; /* Adjust this value for responsiveness */
+    margin-right: -0.1em;
+    letter-spacing: normal;
+    margin-top: -0.5rem; /* Adjusts the vertical alignment */
+    float: left; /* Aligns the first letter to the left */
+    line-height: 1; /* Ensures the first letter aligns with the rest of the text */
 }
+
 
 @media (max-width: 480px) {
     .hero__name::first-letter {
         font-size: 3rem; /* Responsive size for mobile */
-    }
-    .hero__name {
-        letter-spacing: -0.05em; /* Reduce gap between letters */
+        letter-spacing: normal;
+        margin-top: -0.5rem;
+     float: left; /* Aligns the first letter to the left */
+    line-height: 1;
     }
 }
 
@@ -65,29 +75,52 @@
     .hero__name {
         font-size: 4rem;
     }
+
+     
 }
 
+/* Default underline style */
 .hero__name-underline {
-    width: 6rem;
-    height: 0.25rem;
+    width: 19rem;
+    height: 0.10rem;
     background-color: #f03e3e;
-    margin-top: 1rem;
+    margin-top: 0.50rem;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .hero__title {
     font-size: 1.5rem;
     font-weight: 300;
+    letter-spacing: normal;
+    display: inline-block; /* Enables fine control */
+    position: relative;
+ }
+
+.hero__title::first-letter {
+    color: #f03e3e;
+    font-size: 2.2rem;
+    margin-right: -0.1em;
+    letter-spacing: normal;
+    margin-top: 0.25rem; /* Adjusts the vertical alignment */
+    float: left;
+    line-height: 1; /* Ensures the first letter aligns with the rest of the text */
 }
 
 @media (min-width: 768px) {
     .hero__title {
         font-size: 1.875rem;
+        letter-spacing: normal;
+         /* Ensures the first letter aligns with the rest of the text */
     }
+
+   
 }
 
 .hero__description {
     color: #a0aec0;
-    max-width: 32rem;
+    max-width: 40rem;
+    font-size: 1.2rem;
 }
 
 /* Update the image container styles */
@@ -95,7 +128,7 @@
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
-    max-width: 25rem;
+    max-width: 28.5rem;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -185,6 +218,7 @@
     border-radius: .8rem;
     font-size: 1rem;
     justify-items: center;
+    margin-top: -3rem;
 }
 
 .resume-button:hover .contact-icon {
@@ -205,6 +239,8 @@
 
     .hero__text {
         order: 1; /* Change to 1 to keep text first */
+        text-align: center;
+        align-items: center;
     }
 
     .hero__greeting {
@@ -216,22 +252,46 @@
     }
 
     .hero__name-underline {
-        width: 0rem;
+        width: 4rem; /* Smaller width for mobile */
+        height: 0.1rem; /* Slightly thinner */
+        margin: 0rem auto 0 0 0; /* Center align and adjust spacing */
+        margin-left: 0;
+        margin-right: auto;
+        align-self: flex-start; /* Ensures the underline starts from left */
     }
 
     .hero__title {
-        font-size: 1.25rem;
-    }
+        margin-left: 0;
+        margin-right: auto;
+        font-size: 1.20rem;
+        letter-spacing: normal;
+        margin-top: 2rem; /* Adjusts the vertical alignment */
+        
+        }
+
+        .hero__title::first-letter {
+            font-size: 2.2rem;
+            margin-right: -0.1em;
+            letter-spacing: normal;
+            margin-top: -0.5rem; /* Adjusts the vertical alignment */
+            float: left;
+            line-height: 1; /* Ensures the first letter aligns with the rest of the text */
+        }
+
 
     .hero__description {
         margin: 0 auto;
+        width: 95;
+        text-align: left;
         font-size: 0.95rem;
+        margin-top:-1em;
+        margin-right: 5rem;
     }
 
     .resume-button {
         margin: 0 auto;
         width: 60%;
-    }
+     }
 
     .hero__image-container {
         order: 2; /* Change to 2 to move image after text */
@@ -251,6 +311,34 @@
     .hero__social-link {
         font-size: 0.9rem;
     }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .hero__text {
+        order: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .hero__image-container {
+        order: 2;
+        max-width: 16rem;
+        padding: 0.75rem;
+    }
+
+    .resume-button {
+        order: 3; /* Places the button after the image */
+        width: 60%;
+        margin-top: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -266,6 +354,14 @@
 
     .hero__name {
         font-size: 2rem;
+    }
+
+    .hero__name-underline {
+        width: 3rem; /* Even smaller for very small screens */
+        height: 0.1rem;
+        margin: 0rem auto 0;
+        margin-left: 0;
+        margin-right: auto;
     }
 
     .resume-button {
@@ -284,5 +380,12 @@
 
     .hero__name {
         font-size: 1.75rem;
+    }
+
+    .hero__name-underline {
+        width: 8rem; /* Smallest width */
+        margin: 0rem auto 0;
+        margin-left: 0;
+        margin-right: auto;
     }
 }

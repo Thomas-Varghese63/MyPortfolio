@@ -2,13 +2,14 @@
     padding: 8rem 2rem;
     position: relative;
     overflow: hidden;
-  }
+    margin-top: -5rem;
+}
   
-  .education section {
+.education section {
     margin-bottom: 2rem;
-  }
+}
   
-  .section-heading-background {
+.section-heading-background {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -23,28 +24,33 @@
     white-space: nowrap;
     z-index: -1;
     pointer-events: none;
-  }
+}
   
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
     .section-heading-background {
-      font-size: 60px;
+        font-size: 60px;
     }
-  }
+}
   
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .section-heading-background {
-      font-size: 32px;
-      white-space: normal;
-      padding: 0 10px;
-    }
-  }
+        font-size: 32px;
+        white-space: normal;
+        margin-top: 60px;
+      }
+
+      .section-heading__title {
+        margin-top: 175px;
+      }
+
+}
   
-  .timeline {
+.timeline {
     position: relative;
-    padding: 60px 0;
-  }
+    padding: 70px 0;
+}
   
-  .timeline-track {
+.timeline-track {
     position: relative;
     display: flex;
     justify-content: center;
@@ -52,58 +58,72 @@
     flex-wrap: wrap;
     gap: 120px;
     padding: 0 20px;
+}
+
+
+.timeline-item:nth-child(1) {
+    margin-right: 80px;
   }
   
-  /* Static timeline line */
-  .timeline-track::before {
+  .timeline-item:nth-child(2) {
+    margin-right: 10px;
+  }
+  
+  .timeline-item:nth-child(3) {
+    margin-left: 10px;
+  }
+  
+  
+/* Static timeline line */
+.timeline-track::before {
     content: '';
     position: absolute;
     top: 20px;
     left: 48%;
     transform: translateX(-50%);
-    width: 70%;
+    width: calc(85% - 230px);
     height: 2px;
     background: #f9f2f2;
     z-index: 1;
-  }
+}
   
-  /* Glowing blue beam */
-  .timeline-track::after {
+/* Glowing blue beam */
+.timeline-track::after {
     content: '';
     position: absolute;
     top: 20px;
     left: 0;
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, transparent, #00f0ff, transparent);
-    animation: beamMoveHorizontal 3s linear infinite;
+    background: linear-gradient(90deg, transparent, #00aaff, transparent);
+    animation: beamMoveHorizontal 5s linear infinite;
     z-index: 2;
     opacity: 0.7;
     pointer-events: none;
     filter: blur(2px);
-  }
+}
   
-  @keyframes beamMoveHorizontal {
+@keyframes beamMoveHorizontal {
     0% {
-      left: 0;
-      opacity: 0;
+        left: 0;
+        opacity: 0;
     }
     20% {
-      opacity: 1;
+        opacity: 1;
     }
     50% {
-      left: 50%;
+        left: 50%;
     }
     80% {
-      opacity: 1;
+        opacity: 1;
     }
     100% {
-      left: 100%;
-      opacity: 0;
+        left: 100%;
+        opacity: 0;
     }
-  }
+}
   
-  .timeline-item {
+.timeline-item {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -115,162 +135,185 @@
     opacity: 0;
     transform: translateY(30px);
     animation: fadeUp 0.6s ease forwards;
-  }
+}
   
-  .timeline-item:nth-child(1) {
+.timeline-item:nth-child(1) {
     animation-delay: 0.1s;
-  }
-  .timeline-item:nth-child(2) {
+}
+.timeline-item:nth-child(2) {
     animation-delay: 0.3s;
-  }
-  .timeline-item:nth-child(3) {
+}
+.timeline-item:nth-child(3) {
     animation-delay: 0.5s;
-  }
+}
   
-  @keyframes fadeUp {
+@keyframes fadeUp {
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
+}
   
-  .timeline-point {
+.timeline-point {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     background-color: #f03e3e;
     cursor: pointer;
     transition: all 0.3s ease;
-  }
+}
   
-  .timeline-point .icon {
+.timeline-point .icon {
     width: 30px;
     height: 25px;
     color: #ffffff;
-  }
+}
   
-  .timeline-point:hover {
+.timeline-point:hover {
     background-color: #d6336c;
     transform: scale(1.1);
     box-shadow: 0 0 10px rgba(240, 62, 62, 0.6);
-  }
+}
   
-  .timeline-content {
+.timeline-content {
     text-align: center;
     padding: 15px;
     width: 100%;
-    max-width: 350px;
+    max-width: 380px;
     cursor: pointer;
     transition: all 0.1s ease;
-  }
+}
   
-  .timeline-content:hover {
+.timeline-content:hover {
     background-color: rgba(255, 255, 255, 0.03);
     transform: scale(1.02);
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  }
+}
   
-  .timeline-content h3 {
+.timeline-content h3 {
     font-size: 1.2rem;
     margin-bottom: 8px;
     color: #fefefe;
-  }
+}
   
-  .timeline-content h4 {
+.timeline-content h4 {
     font-size: 0.8rem;
     color: #acc5dd;
     margin-bottom: 2px;
-  }
+}
   
-  .timeline-content p {
+.timeline-content p {
     font-size: 0.9rem;
     color: #acc5dd;
     line-height: 1.4;
-  }
+}
   
-  /* Mobile View: vertical timeline + animated beam */
-  @media (max-width: 768px) {
+/* Mobile View: vertical timeline + animated beam */
+@media (max-width: 768px) {
     .timeline-track {
-      flex-direction: column;
-      align-items: center;
-      gap: 60px;
-      position: relative;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 80px;
+        position: relative;
+        padding-left: 80px; /* Adjust padding to align with vertical line */
     }
   
     .timeline-track::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 40px;
-      width: 2px;
-      height: 100%;
-      background: #f9f2f2;
-      z-index: 0;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 40px; /* Align vertical line with points */
+        width: 2px;
+        height: 66%; /* Make line stretch full height */
+        background: #f9f2f2;
+        z-index: 0;
     }
   
     .timeline-track::after {
-      width: 4px;
-      height: 100px;
-      top: 0;
-      left: 40px;
-      background: linear-gradient(180deg, transparent, #00f0ff, transparent);
-      animation: beamMoveVertical 3s linear infinite;
+        width: 2px;
+        height: 100px;
+        top: 0;
+        left: 40px; /* Align beam with vertical line */
+        background: linear-gradient(180deg, transparent, #00f0ff, transparent);
+        animation: beamMoveVertical 3s linear infinite;
     }
   
     @keyframes beamMoveVertical {
-      0% {
-        top: 0;
-        opacity: 0;
-      }
-      20% {
-        opacity: 1;
-      }
-      50% {
-        top: 50%;
-      }
-      80% {
-        opacity: 1;
-      }
-      100% {
-        top: 100%;
-        opacity: 0;
-      }
+        0% {
+            top: 0;
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        50% {
+            top: 50%;
+        }
+        80% {
+            opacity: 1;
+        }
+        100% {
+            top: 100%;
+            opacity: 0;
+        }
     }
   
     .timeline-item {
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 20px;
-      width: 100%;
-      justify-content: flex-start;
-      position: relative;
-      z-index: 2;
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        margin: 0 !important; /* Remove individual margins */
+        padding-left: 0;
+        gap: 20px;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 2;
     }
   
     .timeline-point {
-      margin: 0;
-      margin-top: 4px;
-      flex-shrink: 0;
-      z-index: 2;
+        position: absolute;
+        left: -20px; /* Position points on the line */
+        margin: 0;
+        transform: translateX(-50%);
+        z-index: 2;
     }
-  
+
     .timeline-content {
-      text-align: left;
-      max-width: calc(100% - 80px);
-      padding-left: 10px;
+        text-align: left;
+        padding-left: 30px; /* Add space after timeline points */
+        max-width: calc(100% - 40px);
     }
   
     .section-heading-background {
-      font-size: 40px;
+        font-size: 40px;
     }
   
     .education {
-      padding: 4rem 1rem;
+        padding: 4rem 1rem;
     }
-  }
-  
+}
+
+/* Additional adjustments for smaller screens */
+@media (max-width: 480px) {
+    .timeline-track {
+        padding-left: 30px;
+    }
+    
+    .timeline-track::before,
+    .timeline-track::after {
+        left: 30px;
+    }
+    
+    .timeline-point {
+        left: -2px;
+    }
+
+    .timeline-content {
+        padding-left: 25px;
+    }
+}

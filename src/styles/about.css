@@ -2,13 +2,19 @@
   padding: 4rem 0;
   margin-top: -8rem;
   width: 100%;
+  min-width: 320px; /* Add minimum width */
+  max-width: 1500px;
   position: relative;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 768px) {
   .about {
     padding: 6rem 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -25,26 +31,20 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  min-width: 320px; /* Add minimum width */
   max-width: 1500px;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding: 2rem 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media (min-width: 768px) {
   .about__content {
     gap: 3rem;
   }
-}
-
-.about__image {
-  margin: 0 auto;
-}
-
-.about__image img {
-  max-width: 100%;
-  height: auto;
 }
 
 .about__info {
@@ -107,19 +107,18 @@
 
 .about__description {
   color: #a0aec0;
-  justify-items: center;
-  text-align:center;
   font-size: 1.2rem;
-  max-width:100%;
-  margin: 0 auto;
-}
+  text-align: center;
+  width: calc(100vw + 100%); /* Adjusted width for margin */
+  max-width: 1200px;
+  line-height: 1.6;
+  margin-left: -200px; /* Adjusted margin for centering */
+ }
 
-.about__intro::first-letter{
+.about__intro::first-letter {
   color: #f03e3e;
   font-size: 2rem;
 }
-
- 
 
 .about__background-text {
   position: absolute;
@@ -149,29 +148,132 @@
   .about__background-text {
     font-size: clamp(4rem, 12vw, 60px);
     white-space: normal;
-    padding-top: 2.5rem;
+    padding-top: 1.5rem;
   }
 }
 
-.section-bar {
-  height: 2px;
-  width: 1rem;
-  background-color: #f03e3e;
-  margin-right: 0.5rem;
+@media (max-width: 768px) {
+  .about {
+    padding: 3rem 0;
+    margin-top: -4rem;
+  }
+
+  .about__content {
+    padding-top: 1rem;
+  }
+
+  .about__description {
+    width: 100%;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0 2rem;
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .about__intro {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .tech-scroll-container {
+    max-width: 90vw;
+    margin-left: calc(-45vw + 50%);
+  }
+
+  .tech-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tech-name {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 2rem 0;
+    margin-top: -2rem;
+  }
+
+  .about__description {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0 1.5rem;
+    margin: 0;
+  }
+
+  .about__intro {
+    font-size: 1rem;
+  }
+
+  .tech-scroll-container {
+    max-width: 100vw;
+    margin-left: 0;
+    padding: 0 0.5rem;
+  }
+
+  .tech-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .section-heading-title {
+    font-size: 1.3rem;
+    gap: 0rem;
+  }
+
+  .section-heading-title::before,
+  .section-heading-title::after {
+    width: clamp(0.5rem, 2vw, 1rem);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about {
+    margin-top: -6rem;
+  }
+
+  .about__description {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .tech-scroll-container {
+    max-width: 80vw;
+    margin-left: calc(-40vw + 50%);
+  }
 }
 
 .about__section-title {
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
+.about__section-title::before,
+.about__section-title::after {
+  content: "";
+  display: inline-block;       /* Needed to make height/width apply */
+  height: 1px;                /* Tall = vertical bar */
+  width: 25px;                  /* Thin = vertical bar */
+  background-color: #f03e3e;
+  margin: 0 0.5rem;            /* Add spacing from the text */
+  vertical-align: middle; 
+}
 
 /* Tech scroll styles */
 .tech-scroll-container {
   width: 100%;
+  max-width: 70vw;
+  min-width: 320px; /* Add minimum width */
+  margin: 3rem auto 0;
   overflow: hidden;
-  margin: 1.5rem 0;
   position: relative;
+  padding: 0 1rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .tech-scroll-container::before,
@@ -198,6 +300,7 @@
   display: flex;
   animation: scroll 30s linear infinite;
   width: max-content;
+  margin: 0 auto;
 }
 
 .tech-item {
@@ -210,7 +313,7 @@
 .tech-logo {
   width: 60px;
   height: 60px;
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
@@ -234,5 +337,20 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+/* Add zoom-specific media query */
+@media (max-width: 100%) {
+  .about__content,
+  .tech-scroll-container {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .about__description {
+    padding: 0 2rem;
   }
 }

@@ -1,4 +1,4 @@
-import { Facebook, Twitter, Instagram, Linkedin,Download} from "lucide-react"
+import { Github, Instagram, Linkedin,Download,} from "lucide-react"
 import profileImage from "../assets/passport_size_photo.png";
 
 
@@ -16,21 +16,10 @@ export default function HeroSection() {
               Thomas Varghese
               <div className="hero__name-underline"></div>
             </h1>
-            <h3 className="hero__title">Student</h3>
+            <h3 className="hero__title">Young Professional</h3>
             <p className="hero__description">
-            Passionate developer turning ideas into practical, responsive solutions.
+            An enthusiastic learner who wish to explore the new horizons and contribute my skills to the digital landscape.
             </p>
-            <a
-            href="/THOMAS VARGHESE RESUME.pdf"
-            download="THOMAS VARGHESE RESUME.pdf"
-            className="resume-button"
-            aria-label="Download Resume"
-          >
-            <div className="resume-text">
-              Resume <Download size={20} className="contact-icon" />
-            </div>
-          </a>
-
           </div>
 
           <div className="hero__image-container">
@@ -43,22 +32,32 @@ export default function HeroSection() {
             <div className="hero__image">
             <img src={profileImage} alt="Thomas" width={500} height={500} />            </div>
           </div>
+
+          {/* Moved resume button outside hero__text */}
+          <a
+            href="/THOMAS VARGHESE RESUME.pdf"
+            download="THOMAS VARGHESE RESUME.pdf"
+            className="resume-button"
+            aria-label="Download Resume"
+          >
+            <div className="resume-text">
+              Resume <Download size={20} className="contact-icon" />
+            </div>
+          </a>
         </div>
       </div>
 
       {/* Social media sidebar */}
       <div className="hero__social">
-        <a href="#" className="hero__social-link" aria-label="Facebook">
-          <Facebook size={20} />
+        <a href="https://github.com/meetThomas" className="hero__social-link" aria-label="Facebook">
+          <Github size={22} />
         </a>
-        <a href="#" className="hero__social-link" aria-label="Twitter">
-          <Twitter size={20} />
+         
+        <a href="https://www.instagram.com/thomas_._varghese/?__pwa=1" className="hero__social-link" aria-label="Instagram">
+          <Instagram size={22} />
         </a>
-        <a href="#" className="hero__social-link" aria-label="Instagram">
-          <Instagram size={20} />
-        </a>
-        <a href="#" className="hero__social-link" aria-label="LinkedIn">
-          <Linkedin size={20} />
+        <a href="https://www.linkedin.com/in/thomas-varghese-836000280/" className="hero__social-link" aria-label="LinkedIn">
+          <Linkedin size={22} />
         </a>
       </div>
     </section>
