@@ -1,77 +1,274 @@
-.experience {
-    padding: 4rem 0;
+.projects.section {
+  padding: 5rem 0;
+  background-color: #011627;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+}
+
+.projects__content {
+  position: relative;
+  z-index: 1;
+}
+
+.projects__background-text {
+  position: absolute;
+  top: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 15vw;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  z-index: -1;
+}
+
+.section-heading-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.section-heading-title::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #f71735;
+}
+
+.projects-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-container {
+  position: relative;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+  perspective-origin: center;
+  margin-top: 2rem;
+}
+
+.card-fan {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+}
+
+.project-card {
+  position: absolute;
+  margin-top: -150px;
+  width: 300px;
+  height:400px;
+  cursor: pointer;
+  will-change: transform;
+  transform-origin: bottom center;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+}
+
+.project-card.selected {
+  z-index: 50 !important;
+}
+
+.project-card.was-selected {
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-card__inner {
+  background-color: #0a2540;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-card__content {
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.project-card__image-container {
+  position: relative;
+  height: 450px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.project-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.1);
+}
+
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 21, 41, 0.95), rgba(0, 21, 41, 0.7), rgba(0, 21, 41, 0.3));
+}
+
+.project-card__details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.project-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.project-card__description {
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card__description,
+.project-card.selected .project-card__description {
+  opacity: 1;
+}
+
+.project-card__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.technology-tag {
+  background-color: #f03e3e;
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  transform: translateZ(5px);
+}
+
+.project-card__links {
+  display: flex;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-card__links,
+.project-card.selected .project-card__links {
+  opacity: 1;
+}
+
+.project-card__link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  transform: translateZ(5px);
+}
+
+.project-card__link:hover {
+  color: #f03e3e;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .projects-container {
+    height: auto;
+  }
+
+  .card-fan {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .project-card {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 2rem;
+    transform: none !important;
+    rotate: 0deg !important;
   }
-  
-  @media (min-width: 768px) {
-    .experience {
-      padding: 6rem 0;
-    }
+
+  .project-card:hover {
+    transform: translateY(-10px) !important;
   }
-  
-  .experience__list {
-    max-width: 64rem;
-    margin: 0 auto;
+
+  .section-heading-title {
+    font-size: 2rem;
   }
-  
-  .experience-card {
-    background-color: #0a2540;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .projects.section {
+    padding: 3rem 0;
   }
-  
-  .experience-card__content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+
+  .section-heading-title {
+    font-size: 1.75rem;
   }
-  
-  @media (min-width: 768px) {
-    .experience-card__content {
-      grid-template-columns: 1fr 4fr;
-    }
+
+  .project-card {
+    width: 100%;
   }
-  
-  .experience-card__date {
-    background-color: #001529;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    text-align: center;
-    margin: 1rem;
-  }
-  
-  .experience-card__info {
-    padding: 1rem;
-  }
-  
-  .experience-card__title {
+
+  .project-card__title {
     font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
   }
-  
-  .experience-card__description {
-    color: #a0aec0;
-    margin-bottom: 0.5rem;
+
+  .projects__background-text {
+    font-size: 20vw;
   }
-  
-  .experience-card__location {
-    color: #718096;
-    font-size: 0.875rem;
-  }
-  
-  .experience__background-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 120px;
-    font-weight: bold;
-    color: rgba(10, 37, 64, 0.1);
-    text-transform: uppercase;
-    white-space: nowrap;
-    z-index: -1;
-  }
+}
