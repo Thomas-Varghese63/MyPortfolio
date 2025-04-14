@@ -1,7 +1,7 @@
 "use client"
  
 import { useState } from "react"
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { Mail,Instagram, Linkedin} from "lucide-react"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -39,38 +39,29 @@ export default function ContactSection() {
                 <div className="section-bar"></div>
                 <h4 className="contact-section__title">Email</h4>
               </div>
-              <p className="contact-section__text">info@domainname.com</p>
-              <p className="contact-section__text">support@domain.com</p>
+              <p className="contact-section__text">thomasvarghese540@gmail.com</p>
+              <p className="contact-section__text">thomasvarghese2026@cs.sjcetpalai.ac.in</p>
             </div>
 
-            <div className="contact-section">
-              <div className="contact-section__heading">
-                <div className="section-bar"></div>
-                <h4 className="contact-section__title">Visit My Studio</h4>
-              </div>
-              <p className="contact-section__text">Warrawe Park Streetperrine,</p>
-              <p className="contact-section__text">FL 33157 New York City</p>
-            </div>
+            
 
             <div className="contact-section">
               <div className="contact-section__heading">
                 <div className="section-bar"></div>
                 <h4 className="contact-section__title">Phone</h4>
               </div>
-              <p className="contact-section__text">+01 123 654 8096</p>
+              <p className="contact-section__text">+91 8086365407</p>
             </div>
 
             <div className="contact__social">
-              <a href="#" className="contact__social-link" aria-label="Facebook">
-                <Facebook size={20} />
+              <a href="thomasvarghese540@gmail.com" className="contact__social-link" aria-label="Email">
+                <Mail size={20} />
               </a>
-              <a href="#" className="contact__social-link" aria-label="Twitter">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="contact__social-link" aria-label="Instagram">
+               
+              <a href="https://www.instagram.com/thomas_._varghese/?__pwa=1" className="contact__social-link" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="contact__social-link" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/thomas-varghese-836000280/" className="contact__social-link" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
             </div>

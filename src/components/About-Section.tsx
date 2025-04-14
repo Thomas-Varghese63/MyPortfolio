@@ -1,3 +1,10 @@
+interface Experience {
+  title: string;
+  company: string;
+  duration: string;
+  description: string[];
+}
+
 export default function AboutSection() {
   const technologies = [
     {name: "Python", logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"},
@@ -14,8 +21,22 @@ export default function AboutSection() {
     {name:"supabase", logo:"https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg"},
       ]
 
+  const experiences: Experience[] = [
+    {
+      title: "Web Development Intern",
+      company: "Luminar Technolab",
+      duration: "Aug 2023 - Nov 2023",
+      description: [
+        "Developed and maintained responsive web applications using React.js",
+        "Collaborated with senior developers to implement new features",
+        "Worked on both frontend and backend development tasks",
+        "Gained hands-on experience with Node.js and MongoDB"
+      ]
+    }
+  ];
+
   return (
-    <section id="about-us" className="about section">
+    <section id="about" className="about section">
       <div className="container">
         <div className="about__content">
           <div className="about__background-text">ABOUT</div>
@@ -56,6 +77,29 @@ export default function AboutSection() {
                 </div>
               </div>
             </div>
+
+            <div className="about__section">
+              <div className="about__section-heading">
+                <h4 className="about__section-title">Experience</h4>
+              </div>
+              <div className="experience-container">
+                {experiences.map((exp, index) => (
+                  <div key={index} className="experience-item">
+                    <div className="experience-header">
+                      <h5 className="experience-title">{exp.title}</h5>
+                      <p className="experience-company">{exp.company}</p>
+                      <span className="experience-duration">{exp.duration}</span>
+                    </div>
+                    <ul className="experience-description">
+                      {exp.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

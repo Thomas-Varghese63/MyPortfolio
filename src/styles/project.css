@@ -100,8 +100,8 @@
 
 .project-card {
   position: absolute;
-  margin-top: 0rem;
-  margin-left: 1rem auto;
+  margin-top: 1rem;
+   margin-left: 1rem auto;
   width: 300px;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   cursor: pointer;
@@ -412,6 +412,13 @@
     width: 100%;
     max-width: 320px;
   }
+
+  .projects.section{
+    padding-bottom: 5rem;
+  }
+
+   
+  
 }
 
 @media (max-width: 480px) {

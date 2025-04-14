@@ -137,9 +137,9 @@ const ProjectSection = () => {
               const middleIndex = (totalCards - 1) / 2
               const distanceFromMiddle = index - middleIndex
 
-              const baseRotation = distanceFromMiddle * 20
-              const baseX = distanceFromMiddle * 80
-              const baseY = Math.abs(distanceFromMiddle) * 15
+              const baseRotation = distanceFromMiddle * 5
+              const baseX = distanceFromMiddle * 150
+              const baseY = Math.abs(distanceFromMiddle) * 5
 
               return (
                 <motion.div
