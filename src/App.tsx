@@ -4,8 +4,7 @@ import AboutSection from './components/About-Section'
 import EducationSection from './components/Education-Section'
 import ProjectSection from './components/Project-Section'
 import ServicesSection from './components/Services-Section'
-import ExperienceSection from './components/Experience-Section'
-import ContactSection from './components/Contact-Section'
+ import ContactSection from './components/Contact-Section'
 import Footer from './components/Footer'
 import './styles/global.css'
 import './styles/header.css'
@@ -14,7 +13,6 @@ import './styles/about.css'
 import './styles/education.css'
 import './styles/project.css'
 import './styles/services.css'
-import './styles/experience.css'
 import './styles/contact.css'
 import './styles/footer.css'
 
@@ -28,7 +26,7 @@ function App() {
       <EducationSection />
       <ProjectSection />
       <ServicesSection />
-      <ExperienceSection />
+      
       <ContactSection />
       <Footer />
     </main>

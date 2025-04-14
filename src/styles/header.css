@@ -14,6 +14,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    height: 50px;
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
@@ -24,7 +25,7 @@
     font-weight: bold;
     color: white;
     position: relative;
-    right:10% ; /* Adjusted left position for centering */
+    left:0 ; /* Adjusted left position for centering */
 }
 
 .styled-name {
@@ -38,7 +39,7 @@
 .header__nav {
     display: none;
     position:relative;
-    left: 10%;
+    left: 0;
 }
 
 .header__nav-list {

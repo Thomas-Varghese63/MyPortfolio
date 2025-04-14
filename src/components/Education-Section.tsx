@@ -38,7 +38,7 @@ function EducationSection() {
   return (
     <section id="education" className="education section">
       <div className="section-heading">
-        <h2 className="section-heading-background">MY EDUCATIONAL JOURNEY</h2>
+        <h2 className="section-heading-background">EDUCATION</h2>
         <h3 className="section-heading__title">EDUCATION</h3>
       </div>
     <div className="container">
