@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { GraduationCap, School } from 'lucide-react';
+import image1 from '../assets/kj.png';
+import image2 from '../assets/image.png';
 
 interface EducationStep {
   title: string;
@@ -8,6 +10,7 @@ interface EducationStep {
   passoutYear?: string;
   icon: React.ReactNode;
   color: string;
+  logo: string;
 }
 
 const educationJourney: EducationStep[] = [
@@ -16,21 +19,24 @@ const educationJourney: EducationStep[] = [
     institution: 'KRISTU JYOTHI H.S.S',
     passoutYear: '2019-20',
     icon: <School className="icon" />,
-    color: '#8B5CF6'
+    color: '#8B5CF6',
+    logo: image1
   },
   {
     title: '+2',
     institution: 'KRISTU JYOTHI H.S.S',
     passoutYear: '2020-22',
     icon: <School className="icon" />,
-    color: '#EF4444'
+    color: '#EF4444',
+    logo: image1
   },
   {
     title: 'B.TECH COMPUTER SCIENCE AND ENGINEERING',
     institution: 'ST. JOSEPH' + '\n' + 'S COLLEGE OF ENGINEERING AND TECHNOLOGY',
     passoutYear: '2022-26',
     icon: <GraduationCap className="icon" />,
-    color: '#10B981'
+    color: '#10B981',
+    logo: image2
   },
 ];
 
@@ -52,6 +58,11 @@ function EducationSection() {
               <div className="timeline-content">
                 <h3>{step.title}</h3>
                 <h4>{step.institution}</h4>
+                <img 
+                      src={step.logo} 
+                      alt={`${step.institution} logo`} 
+                      className="institution-logo"
+                    />
                 <p>{step.passoutYear}</p>
               </div>
             </div>

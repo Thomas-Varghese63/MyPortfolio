@@ -51,7 +51,7 @@
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 120px;
+  gap: 180px;
   padding: 0 20px;
 }
 
@@ -62,7 +62,7 @@
   top: 20px;
   left: 49%;
   transform: translateX(-50%);
-  width: 55.9%;
+  width: 65%;
   height: 2px;
   background: #f9f2f2;
   z-index: 1;
@@ -74,7 +74,7 @@
   position: absolute;
   top: 20px;
   left: 15%;
-  width: 80px;
+  width: 100px;
   height: 4px;
   background: linear-gradient(90deg, transparent, #00ffff 40%, #00ffff 60%, transparent);
   animation: electricPulse 3s linear infinite;
@@ -123,6 +123,27 @@
 }
 .timeline-item:nth-child(3) {
   animation-delay: 0.5s;
+}
+
+.institution-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .institution-logo {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .institution-logo {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 @keyframes fadeUp {
