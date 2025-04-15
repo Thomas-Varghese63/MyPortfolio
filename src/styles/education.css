@@ -73,33 +73,30 @@
   content: '';
   position: absolute;
   top: 20px;
-  left: 0;
+  left: 15%;
   width: 80px;
   height: 4px;
   background: linear-gradient(90deg, transparent, #00ffff 40%, #00ffff 60%, transparent);
-  animation: electricPulse 2.5s linear infinite;
+  animation: electricPulse 3s linear infinite;
   z-index: 2;
   opacity: 1;
   pointer-events: none;
-  filter: drop-shadow(0 0 6px #00f0ff) blur(1px);
+  filter: drop-shadow(0 0 8px #00f0ff) blur(2px);
 }
 
 @keyframes electricPulse {
   0% {
-    left: 0%;
+    left: 15%;
     opacity: 0;
   }
   10% {
     opacity: 1;
   }
-  50% {
-    left: 50%;
-  }
   90% {
     opacity: 1;
   }
   100% {
-    left: 100%;
+    left: 74%;
     opacity: 0;
   }
 }
@@ -258,8 +255,8 @@
 
   .timeline-track::after {
     width: 2px;
-    height: 100px;
-    top: 0;
+    height: 80px;
+    top: 20px;
     left: 68px;
     background: linear-gradient(180deg, transparent, #00f0ff 40%, #00f0ff 60%, transparent);
     animation: beamMoveVertical 3s linear infinite;
@@ -268,20 +265,17 @@
 
   @keyframes beamMoveVertical {
     0% {
-      top: 0;
+      top: 5px;
       opacity: 0;
     }
-    20% {
+    10% {
       opacity: 1;
     }
-    50% {
-      top: 50%;
-    }
-    80% {
+    90% {
       opacity: 1;
     }
     100% {
-      top: 100%;
+      top: calc(60% - 20px);
       opacity: 0;
     }
   }

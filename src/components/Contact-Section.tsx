@@ -47,7 +47,7 @@ export default function ContactSection() {
 
             <div className="contact-section">
               <div className="contact-section__heading">
-                <div className="section-bar"></div>
+                <div className="experience-section-bar"></div>
                 <h4 className="contact-section__title">Phone</h4>
               </div>
               <p className="contact-section__text">+91 8086365407</p>

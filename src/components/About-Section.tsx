@@ -24,8 +24,8 @@ export default function AboutSection() {
   const experiences: Experience[] = [
     {
       title: "Web Development Intern",
-      company: "Luminar Technolab",
-      duration: "Aug 2023 - Nov 2023",
+      company: "Edu-versity",
+      duration: "June 2023 - August 2023",
       description: [
         "Developed and maintained responsive web applications using React.js",
         "Collaborated with senior developers to implement new features",
@@ -78,26 +78,24 @@ export default function AboutSection() {
               </div>
             </div>
 
-            <div className="about__section">
-              <div className="about__section-heading">
-                <h4 className="about__section-title">Experience</h4>
-              </div>
-              <div className="experience-container">
-                {experiences.map((exp, index) => (
-                  <div key={index} className="experience-item">
-                    <div className="experience-header">
-                      <h5 className="experience-title">{exp.title}</h5>
-                      <p className="experience-company">{exp.company}</p>
-                      <span className="experience-duration">{exp.duration}</span>
-                    </div>
+            <div className="about__section experience-section">
+              <h4 className="experience__section-title">Experience</h4>
+              {experiences.map((exp, index) => (
+                <div key={index} className="experience-row">
+                  <div className="experience-left">
+                    <h5 className="experience-title">{exp.title}</h5>
+                    <p className="experience-company">{exp.company}</p>
+                    <span className="experience-duration">{exp.duration}</span>
+                  </div>
+                  <div className="experience-right">
                     <ul className="experience-description">
                       {exp.description.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
 
           </div>
