@@ -58,8 +58,6 @@
       line-height: 4.5rem;
     }
   }
-  
-
 
 
 .hero__content {
@@ -183,6 +181,11 @@
     color: #a0aec0;
     max-width: 40rem;
     font-size: 1.2rem;
+}
+
+.hero__description:hover{
+    color: #ffffff;
+    transition: color 0.2s;
 }
 
 /* Update the image container styles */

@@ -124,9 +124,9 @@ const ProjectSection = () => {
       <div className="container">
         <div className="section-heading">
           <div className="projects__background-text">PROJECTS</div>
-          <h2 className="section-heading__title">MY PROJECTS</h2>
+          <h2 className="section-heading__title">MY WORKS</h2>
           <p className="projects__description">
-            Here are some of my completed projects and ongoing works.
+            Here are some of my completed and ongoing works.
           </p>
         </div>
 
