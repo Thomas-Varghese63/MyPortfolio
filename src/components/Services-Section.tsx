@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react"
-import { ChevronsLeftRightIcon as ChevronsLeftRightEllipsis, ClipboardPen, DatabaseZap } from "lucide-react"
+import { ChevronsLeftRightIcon as ChevronsLeftRightEllipsis, Tag, DatabaseZap } from "lucide-react"
 import image1 from "../assets/development.png"
-import image2 from "../assets/content.jpg"
 import image3 from "../assets/data.jpg"
+import image4 from "../assets/freelance.jpg"
 import { motion } from "framer-motion";
 
 const staggerContainer = {
@@ -75,11 +75,11 @@ export default function ServicesSection() {
       image: image1,
     },
     {
-      icon: <ClipboardPen className="service-card__icon-svg" />,
-      title: "Content Writing",
+      icon: <Tag className="service-card__icon-svg" />,
+      title: "Freelancing",
       description:
-        "I write simple and effective content for businesses, including blogs, website text, and SEO content to help you reach more people.",
-      image: image2,
+      "I work as a freelance web developer ,content writer and designer, which allows me to creatively build digital solutions, work on my own schedule, and collaborate with clients from around the world.",
+      image: image4,
     },
     {
       icon: <DatabaseZap className="service-card__icon-svg" />,
@@ -88,6 +88,7 @@ export default function ServicesSection() {
         "I analyze data to find useful patterns and insights that help businesses make smarter decisions. I'm currently pursuing data analysis as a service to help brands grow using real information and clear reports.",
       image: image3,
     },
+
   ];
 
   return (
