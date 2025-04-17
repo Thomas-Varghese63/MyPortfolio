@@ -36,12 +36,16 @@ export default function ServicesSection() {
   const servicesRef = useRef<HTMLDivElement[]>([]);
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 1024;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
-            entry.target.classList.add("in-view");
+            if (isMobile) {
+              entry.target.classList.add("in-view");
+            }
           }
         });
       },
@@ -107,19 +111,23 @@ export default function ServicesSection() {
           className="services__grid"
           variants={staggerContainer}
         >
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className={`service-card service-card--${index + 1}`}
-              variants={fadeIn('up', 0.3 * (index + 1))}
-            >
-              <div className="service-card__overlay">
-                <div className="service-card__icon">{service.icon}</div>
-                <h4 className="service-card__title">{service.title}</h4>
-                <p className="service-card__description">{service.description}</p>
-              </div>
-            </motion.div>
-          ))}
+        {services.map((service, index) => (
+  <motion.div
+    key={index}
+    className={`service-card service-card--${index + 1}`}
+    variants={fadeIn('up', 0.3 * (index + 1))}
+    ref={(el) => {
+      servicesRef.current[index] = el!;
+    }}
+  >
+    <div className="service-card__overlay">
+      <div className="service-card__icon">{service.icon}</div>
+      <h4 className="service-card__title">{service.title}</h4>
+      <p className="service-card__description">{service.description}</p>
+    </div>
+  </motion.div>
+))}
+
         </motion.div>
       </motion.div>
     </section>
