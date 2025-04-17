@@ -87,7 +87,41 @@
   /* Responsive styles */
   @media (max-width: 768px) {
     .service-card {
-      height: 350px;
+      position:relative;
+      width: 90%;
+      max-width: 340px;
+      margin: 1rem auto;
+      height: auto;
+      min-height: 350px;
+      overflow: visible;
+      transform: none !important;
+      transition: transform 0.3s ease, opacity 0.5s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  
+    .service-card.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    .service-card:hover {
+      transform: translateY(-5px) !important;
+    }
+  
+    .service-card__overlay {
+      padding: 1.25rem;
+      opacity: 0;
+      transform: translateY(0px);
+      transition: opacity 0.4s ease, transform 0.5s ease;
+      overflow: visible;
+      height:100%;
+      position: relative;
+    }
+  
+    .service-card.in-view .service-card__overlay {
+      opacity: 1;
+      transform: translateY(0);
     }
   
     .service-card__title {
@@ -97,53 +131,21 @@
     .service-card__description {
       font-size: 0.85rem;
     }
-
-    .service-card__overlay {
-      padding: 1.25rem;
-    }
-
-    .service-card__overlay {
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transform: translateY(20px);
-      transition: all 0.5s ease;
-    }
-
-    .service-card.in-view .service-card__overlay {
-      opacity: 1;
-      max-height: 1000px;
-      transform: translateY(0);
-      padding: 1.5rem;
-    }
-
-    .service-card {
-      height: 350px;
-      transform: none !important;
-      transition: transform 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px) !important;
-    }
-
+  
     .services__grid {
       flex-direction: column;
       align-items: center;
     }
-
-    .service-card {
-      width: 90%;
-      max-width: 340px;
-      margin: 1rem auto;
-    }
   }
+  
+  
   
   @media (max-width: 480px) {
     .service-card {
       height: 350px;
     }
-  
+
+    
     .service-card__title {
       font-size: 1rem;
     }

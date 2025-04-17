@@ -3,7 +3,34 @@ import { ChevronsLeftRightIcon as ChevronsLeftRightEllipsis, ClipboardPen, Datab
 import image1 from "../assets/development.png"
 import image2 from "../assets/content.jpg"
 import image3 from "../assets/data.jpg"
+import { motion } from "framer-motion";
 
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const fadeIn = (direction = "up", delay = 0) => {
+  return {
+    hidden: {
+      y: direction === "up" ? 20 : -20,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay,
+        duration: 0.5,
+      },
+    },
+  };
+};
 
 export default function ServicesSection() {
   const servicesRef = useRef<HTMLDivElement[]>([]);
@@ -61,30 +88,40 @@ export default function ServicesSection() {
 
   return (
     <section id="services" className="services section">
-      <div className="container">
-        <div className="section-heading">
+      <motion.div
+        className="container"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+        <motion.div 
+          className="section-heading"
+          variants={fadeIn('down', 0.2)}
+        >
           <h2 className="section-heading__background">SERVICES</h2>
           <h3 className="section-heading__title">MY SERVICES</h3>
-        </div>
+        </motion.div>
 
-        <div className="services__grid">
+        <motion.div 
+          className="services__grid"
+          variants={staggerContainer}
+        >
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
               className={`service-card service-card--${index + 1}`}
-              ref={(el) => {
-                servicesRef.current[index] = el!;
-              }}
+              variants={fadeIn('up', 0.3 * (index + 1))}
             >
               <div className="service-card__overlay">
                 <div className="service-card__icon">{service.icon}</div>
                 <h4 className="service-card__title">{service.title}</h4>
                 <p className="service-card__description">{service.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
-  );
+  )
 }

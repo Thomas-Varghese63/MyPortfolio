@@ -5,6 +5,23 @@
   box-sizing: border-box;
 }
 
+ 
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Common Layout */
+.section {
+  padding: 4rem 0;
+  position: relative;
+}
+ 
+
 body {
   background-color: #001529;
   color: #ffffff;

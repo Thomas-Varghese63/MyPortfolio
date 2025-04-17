@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
+import VideoBg from './VideoBg'
 
 interface AnimatedIntroProps {
   onComplete: () => void
@@ -25,7 +26,7 @@ export default function AnimatedIntro({ onComplete, skipToHome }: AnimatedIntroP
       // Delay before calling onComplete to allow final fade out
       setTimeout(() => {
         onComplete() // Remove the if check since we made it required
-      }, 3000)
+      }, 1500)
     }
   }, [currentWordIndex, showFinalMessage, animationComplete, words.length, onComplete])
 
@@ -41,13 +42,14 @@ export default function AnimatedIntro({ onComplete, skipToHome }: AnimatedIntroP
     // Handle word animations
     const timer = setTimeout(() => {
       startNextAnimation()
-    }, 1200) // Each word shows for 1.2 seconds instead of 2
+    }, 1000) // Each word shows for 1.2 seconds instead of 2
 
     return () => clearTimeout(timer)
   }, [currentWordIndex, startNextAnimation])
 
   return (
     <div className="intro-container">
+      <VideoBg />
       <button 
         className="skip-button" 
         onClick={skipToHome}
@@ -65,7 +67,8 @@ export default function AnimatedIntro({ onComplete, skipToHome }: AnimatedIntroP
 
         {showFinalMessage && (
           <div className={`final-message ${animationComplete ? "fade-out" : ""}`}>
-            Hii, I'M THOMAS — AND THIS IS WHAT I DO !!
+          
+      THIS IS WHAT I DO <br />AND <br /> I DO IT WELL
           </div>
         )}
       </div>

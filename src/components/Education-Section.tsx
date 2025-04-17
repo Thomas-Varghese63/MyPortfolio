@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { GraduationCap, School } from 'lucide-react';
+import { motion } from 'framer-motion';
 import image1 from '../assets/kj.png';
 import image2 from '../assets/image.png';
 
@@ -40,38 +40,74 @@ const educationJourney: EducationStep[] = [
   },
 ];
 
-function EducationSection() {
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3
+    }
+  }
+};
+
+const fadeIn = (direction = 'up', delay = 0) => {
+  return {
+    hidden: { opacity: 0, y: direction === 'up' ? 20 : -20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { delay, duration: 0.5 }
+    }
+  };
+};
+
+export default function EducationSection() {
   return (
     <section id="education" className="education section">
-      <div className="section-heading">
-        <h2 className="section-heading-background">EDUCATION</h2>
-        <h3 className="section-heading__title">EDUCATION</h3>
-      </div>
-    <div className="container">
-      <div className="timeline">
-        <div className="timeline-track">
-          {educationJourney.map((step, index) => (
-            <div key={index} className="timeline-item">
-              <div className="timeline-point">
-                {step.icon}
-              </div>
-              <div className="timeline-content">
-                <h3>{step.title}</h3>
-                <h4>{step.institution}</h4>
-                <img 
-                      src={step.logo} 
-                      alt={`${step.institution} logo`} 
-                      className="institution-logo"
-                    />
-                <p>{step.passoutYear}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-     </section>
-  );
-}
+      <motion.div
+        className="container"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.25 }}
+      >
+        <motion.div 
+          className="section-heading"
+          variants={fadeIn('down', 0.2)}
+        >
+          <h2 className="section-heading-background">EDUCATION</h2>
+          <h3 className="section-heading__title">EDUCATION</h3>
+        </motion.div>
 
-export default EducationSection;
+        <motion.div 
+          className="timeline"
+          variants={staggerContainer}
+        >
+          <div className="timeline-track">
+            {educationJourney.map((step, index) => (
+              <motion.div
+                key={index}
+                className="timeline-item"
+                variants={fadeIn('up', 0.3 * (index + 1))}
+              >
+                <div className="timeline-point">
+                  {step.icon}
+                </div>
+                <div className="timeline-content">
+                  <h3>{step.title}</h3>
+                  <h4>{step.institution}</h4>
+                  <img 
+                    src={step.logo} 
+                    alt={`${step.institution} logo`} 
+                    className="institution-logo"
+                  />
+                  <p>{step.passoutYear}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+    </section>
+  )
+}

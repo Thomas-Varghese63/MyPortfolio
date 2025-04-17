@@ -1,4 +1,6 @@
 import { useState } from 'react'
+//import { motion } from 'framer-motion';
+//import { staggerContainer } from './animation';
 import Intro from './components/Intro'
 import Header from './components/Header'
 import HeroSection from './components/Hero-Section'
@@ -20,7 +22,7 @@ import './styles/contact.css'
 import './styles/footer.css'
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true)
+  const [showIntro, setShowIntro,] = useState(true)
 
   const handleIntroComplete = () => {
     setShowIntro(false)
@@ -28,6 +30,12 @@ function App() {
 
   return (
     <main>
+
+ 
+ 
+       
+      
+      {/* Rest of your existing content */}
       {showIntro ? (
         <Intro 
           onComplete={handleIntroComplete} 
@@ -43,8 +51,10 @@ function App() {
           <ServicesSection />
           <ContactSection />
           <Footer />
+          
         </>
       )}
+      
     </main>
   )
 }

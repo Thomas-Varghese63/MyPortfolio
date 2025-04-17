@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail,Instagram, Linkedin} from "lucide-react"
+import { Github,Instagram, Linkedin,Code} from "lucide-react"
 
 export default function ContactSection() {
   return (
@@ -33,8 +33,8 @@ export default function ContactSection() {
             </div>
 
             <div className="contact__social">
-              <a href="thomasvarghese540@gmail.com" className="contact__social-link" aria-label="Email">
-                <Mail size={20} />
+              <a href="https://github.com/meetThomas" className="contact__social-link" aria-label="Email">
+                <Github size={20} />
               </a>
                
               <a href="https://www.instagram.com/thomas_._varghese/?__pwa=1" className="contact__social-link" aria-label="Instagram">
@@ -43,6 +43,10 @@ export default function ContactSection() {
               <a href="https://www.linkedin.com/in/thomas-varghese-836000280/" className="contact__social-link" aria-label="LinkedIn">
                 <Linkedin size={20} />
               </a>
+              <a href="https://leetcode.com/u/Thomas_Varghese/" className="contact__social-link" aria-label="code">
+              <Code size={20} />
+              </a>
+
             </div>
           </div>
 

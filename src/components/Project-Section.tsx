@@ -43,7 +43,7 @@ const projects: Project[] = [
     description: "A web application for managing household works and book services",
     image: image3,
     technologies: ["React", "D3.js", "Node.js", "MQTT"],
-    liveLink: "Not yet live",
+    liveLink: "",
     githubLink: "#",
   },
   {
@@ -52,7 +52,7 @@ const projects: Project[] = [
     description: "A platform fitness tracking app for users to do workouts and track their progress (In development)",
     image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800",
     technologies: [],
-    liveLink: "Not yet live",
+    liveLink: "",
     githubLink: "Under development",
   },
   {
@@ -61,7 +61,7 @@ const projects: Project[] = [
     description: "A simple to do list app to manage your tasks (In development)",
     image: image4,
     technologies: [],
-    liveLink: "Not yet live",
+    liveLink: "",
     githubLink: "Under development",
   },
 ]
@@ -70,6 +70,7 @@ const ProjectSection = () => {
   const [isMobile, setIsMobile] = useState(false)
   const [selectedId, setSelectedId] = useState<number | null>(null)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+
 
   const handleCardClick = (id: number) => {
     if (selectedId === id) {
@@ -80,6 +81,8 @@ const ProjectSection = () => {
   };
 
   useEffect(() => {
+
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
@@ -88,6 +91,8 @@ const ProjectSection = () => {
     window.addEventListener("resize", checkMobile)
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
+
+ 
 
   useEffect(() => {
     if (!isMobile) return
