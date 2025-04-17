@@ -5,12 +5,29 @@
   box-sizing: border-box;
 }
 
+ 
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Common Layout */
+.section {
+  padding: 4rem 0;
+  position: relative;
+}
+ 
+
 body {
   background-color: #001529;
   color: #ffffff;
   font-family: "Inter", sans-serif;
   line-height: 1.5;
-  
+  overflow-x: hidden;
 }
 
 .container {
@@ -29,6 +46,8 @@ a {
   padding: 4rem 0;
   position: relative;
   overflow: hidden;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .section-heading {
@@ -122,4 +141,9 @@ a {
 
 .btn--primary:hover {
   background-color: #f8f9fa;
+}
+
+main {
+  position: relative;
+  overflow-x: hidden;
 }

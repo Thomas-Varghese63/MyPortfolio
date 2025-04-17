@@ -1,40 +1,96 @@
-import { Github, Instagram, Linkedin,Download,} from "lucide-react"
-import profileImage from "../assets/passport_size_photo.png";
+"use client"
+import { motion } from "framer-motion"
+import { Github, Instagram, Linkedin, Download } from "lucide-react"
+import profileImage from "../assets/passport_size_photo.png"
+import { fadeIn, staggerContainer, textVariant, slideIn } from '../animation'
 
-
-
-
- 
 export default function HeroSection() {
   return (
     <section id="home" className="hero section">
-      <div className="container">
+      <motion.h2
+        className="hero-heading-background"
+        variants={fadeIn('right', 0.5)}
+        initial="hidden"
+        animate="show"
+      >
+        {['T', 'H', 'O', 'M', 'A', 'S'].map((letter, index) => (
+          <motion.span
+            key={index}
+            variants={textVariant(0.15 * index)}
+            initial="hidden"
+            animate="show"
+          >
+            {letter}<br />
+          </motion.span>
+        ))}
+      </motion.h2>
+
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        animate="show"
+        className="container"
+      >
         <div className="hero__content">
-          <div className="hero__text">
-            <h2 className="hero__greeting">Hi There, I'm</h2>
-            <h1 className="hero__name">
+          <motion.div
+            className="hero__text"
+            variants={fadeIn('left', 0.3)}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.h2
+              className="hero__greeting"
+              variants={textVariant(0.3)}
+              initial="hidden"
+              animate="show"
+            >
+              Hi There, I'm
+            </motion.h2>
+            <motion.h1
+              className="hero__name"
+              variants={textVariant(0.1)}
+              initial="hidden"
+              animate="show"
+            >
               Thomas Varghese
               <div className="hero__name-underline"></div>
-            </h1>
-            <h3 className="hero__title">Young Professional</h3>
-            <p className="hero__description">
-            An enthusiastic learner who wish to explore the new horizons and contribute my skills to the digital landscape.
-            </p>
-          </div>
+            </motion.h1>
+            <motion.h3
+              className="hero__title"
+              variants={textVariant(0.3)}
+              initial="hidden"
+              animate="show"
+            >
+              Young Professional
+            </motion.h3>
+            <motion.p
+              className="hero__description"
+              variants={fadeIn('up', 0.5)}
+              initial="hidden"
+              animate="show"
+            >
+              An enthusiastic learner who wish to explore the new horizons and contribute my skills to the digital landscape.
+            </motion.p>
+          </motion.div>
 
-          <div className="hero__image-container">
-            {/* Decorative elements */}
+          <motion.div
+            className="hero__image-container"
+            variants={slideIn('left', 'tween', 0.2, 1)}
+            initial="hidden"
+            animate="show"
+          >
             <div className="hero__image-circle hero__image-circle--border"></div>
             <div className="hero__image-circle hero__image-circle--accent"></div>
             <div className="hero__image-circle hero__image-circle--dotted"></div>
-
-            {/* Profile image */}
             <div className="hero__image">
-            <img src={profileImage} alt="Thomas" width={500} height={500} />            </div>
-          </div>
+              <img src={profileImage} alt="Thomas" width={500} height={500} />
+            </div>
+          </motion.div>
 
-          {/* Moved resume button outside hero__text */}
-          <a
+          <motion.a
+            variants={fadeIn('up', 0.5)}
+            initial="hidden"
+            animate="show"
             href="/THOMAS VARGHESE RESUME.pdf"
             download="THOMAS VARGHESE RESUME.pdf"
             className="resume-button"
@@ -43,23 +99,26 @@ export default function HeroSection() {
             <div className="resume-text">
               Resume <Download size={20} className="contact-icon" />
             </div>
-          </a>
+          </motion.a>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Social media sidebar */}
-      <div className="hero__social">
-        <a href="https://github.com/meetThomas" className="hero__social-link" aria-label="Facebook">
+      <motion.div
+        className="hero__social"
+        variants={fadeIn('right', 0.6)}
+        initial="hidden"
+        animate="show"
+      >
+        <a href="https://github.com/meetThomas" className="hero__social-link" aria-label="GitHub">
           <Github size={22} />
         </a>
-         
         <a href="https://www.instagram.com/thomas_._varghese/?__pwa=1" className="hero__social-link" aria-label="Instagram">
           <Instagram size={22} />
         </a>
         <a href="https://www.linkedin.com/in/thomas-varghese-836000280/" className="hero__social-link" aria-label="LinkedIn">
           <Linkedin size={22} />
         </a>
-      </div>
+      </motion.div>
     </section>
   )
 }

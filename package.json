@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "framer-motion": "^12.6.5",
+ 
+    "gsap": "^3.12.7",
     "lucide-react": "^0.487.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-parallax-tilt": "^1.7.290"
+    "react-parallax-tilt": "^1.7.291"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
