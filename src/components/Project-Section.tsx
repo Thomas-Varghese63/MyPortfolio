@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import Tilt from 'react-parallax-tilt'
-import { ExternalLink, Github } from "lucide-react"
+import { ExternalLink} from "lucide-react"
 import image1 from "../assets/santa.png"
 import image2 from "../assets/user.png"
 import image3 from "../assets/how_it_works_pic_updated.webp"
@@ -15,7 +15,7 @@ interface Project {
   image: string
   technologies: string[]
   liveLink: string
-  githubLink: string
+  
 }
 
 const projects: Project[] = [
@@ -26,7 +26,7 @@ const projects: Project[] = [
     image: image1,
     technologies: ["Html", "Css"],
     liveLink: "https://meetthomas.github.io/santaclause-portfolio/",
-    githubLink: "https://github.com/meetThomas/santaclause-portfolio",
+    
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const projects: Project[] = [
     image: image2,
     technologies: ["Html", "Node.js", "Express.js", "MySql"],
     liveLink: "Not yet live",
-    githubLink: "https://github.com/meetThomas/USER_IDENTFICATION_SYSTEM",
+    
   },
   {
     id: 3,
@@ -44,7 +44,7 @@ const projects: Project[] = [
     image: image3,
     technologies: ["React", "D3.js", "Node.js", "MQTT"],
     liveLink: "",
-    githubLink: "#",
+    
   },
   {
     id: 4,
@@ -53,16 +53,16 @@ const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=800",
     technologies: [],
     liveLink: "",
-    githubLink: "Under development",
+    
   },
   {
     id: 5,
-    title: "To do list",
-    description: "A simple to do list app to manage your tasks (In development)",
+    title: "Collage Management Dashboard",
+    description: " a basic dashboard to manage faculty, students, and fee records, with simple add, view, and edit features.",
     image: image4,
-    technologies: [],
-    liveLink: "",
-    githubLink: "Under development",
+    technologies: ["React"],
+    liveLink: "https://collage-dashboard-peach.vercel.app/",
+    
   },
 ]
 
@@ -218,14 +218,7 @@ const ProjectSection = () => {
                             <ExternalLink size={20} />
                             <span>Live Demo</span>
                           </a>
-                          <a
-                            href={project.githubLink}
-                            className="project-card__link"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            <Github size={20} />
-                            <span>Source Code</span>
-                          </a>
+                          
                         </div>
                       </div>
                     </div>
