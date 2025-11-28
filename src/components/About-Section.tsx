@@ -37,6 +37,20 @@ export default function AboutSection() {
         "Worked on both frontend and backend development tasks",
         "Gained hands-on experience with Node.js and MongoDB"
       ]
+    },
+
+     {
+      title: "Software Engineering Intern",
+      company: "Comptivia",
+      duration: "July 2025 - August 202",
+      description: [
+    "Developed a To-Do List web application using React.js and Node.js",
+    "Followed MVC architectural pattern during development",
+    "Worked with RESTful APIs, Axios, authentication and state management",
+    "Handled frontend–backend integration for smooth communication",
+    "Collaborated with the Product Hub team for feature implementation",
+    "Updated and improved the source code to enhance performance"
+]
     }
   ];
 
